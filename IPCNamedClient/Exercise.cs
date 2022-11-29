@@ -16,17 +16,21 @@ namespace Exercise
             server.WaitForConnection();
 
             StreamReader reader = new StreamReader(server);
+            StreamWriter writer = new StreamWriter(server);
 
             while (true)
             {
                 String msg = reader.ReadLine();
-                if (String.IsNullOrEmpty(msg)) // Finish if nothing is entered
+                if (String.IsNullOrEmpty(msg))
+                { // Finish if nothing is entered
                     break;
+                }
                 else
                 {
                     Console.WriteLine(msg); // Print the message received
                     Console.WriteLine(String.Join("", msg.Reverse())); // Print the reverse of the received message
-
+                    writer.WriteLine(String.Join("", msg.Reverse()));
+                    writer.Flush();
                 }
             }
         }

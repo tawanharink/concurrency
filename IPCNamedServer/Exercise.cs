@@ -16,6 +16,7 @@ namespace Exercise
             client.Connect();
 
             StreamWriter writer = new StreamWriter(client);
+            StreamReader reader = new StreamReader(client);
 
             while (true)
             {
@@ -26,6 +27,8 @@ namespace Exercise
                 {
                     writer.WriteLine(input);
                     writer.Flush();
+                    String msgback = reader.ReadLine();
+                    Console.WriteLine(msgback);
                 }
             }
         }

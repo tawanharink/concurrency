@@ -68,9 +68,13 @@ Reference: [System calls to make processes](https://learn.microsoft.com/en-us/do
 3. [~ 30 min ] **[Solution will be Available]** **IPCNamedClient, IPCNamedServer**: Two projects are implemented to present how two programs can communicate using named pipes.
 **Note**: Client and server naming is not following strict definition of client-server roles, it is just oriented to have a peer to peer communication.
 	1. Read and analyse the programs for both client and server. What do you expect from the behaviour of these programs?
+      Client will wait for connection, Server will ask for an input and the Client will reverse the message.
 	2. Run the server, run the client. Check the behaviour.
+      It did what I answered in Exercise 1.
 	3. Run one server and two clients. Does the server communicate with both clients?
+      No all Pipes are in use.
 	4. What will happen if the name of the pipe in the server is different from the client? Change the name of the pipe in the server (or the client). Re-run both the client and server. Can they communicate? 
+   They cannot communicate, they are waiting for a connecting that is not comming.
 	5. Named pipes are meant for programs where two-way communication is needed. The current implementation provides only one-way communication (from the server to the client). Extend the programs such that the client sends the result of its processing (i.e. reversed message) back to the server. The server will print the result received from the client.
 <!-- Solution: Is available. -->
 
