@@ -13,19 +13,22 @@ namespace Exercise
         {
             // Todo: Create an object from ProcessStartInfo
             // Implement your code here ...
+            ProcessStartInfo prInfo = new ProcessStartInfo();
 
 
             // Todo: Provide the path and the name of your executable file
             // Implement your code here
+            prInfo.FileName = "C:\\Windows\\notepad.exe";
 
 
-            //prInfo.CreateNoWindow = false; // This means start the process in a new window
-            //prInfo.UseShellExecute = false;
+            prInfo.CreateNoWindow = false; // This means start the process in a new window
+            prInfo.UseShellExecute = false;
 
             try
             {
                 // Todo: Start your process and then wait for its exit
                 // Implement your code here
+                Process.Start(prInfo);
 
             }
             catch (Exception e)
