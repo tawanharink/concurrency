@@ -109,8 +109,43 @@ The main objectives are to understand and apply concepts of multithreading. This
 
 1. [~ 5 min] In Week 1, it is discussed how a statement like **C=A+B** is translated to assembly instructions. Answer the following questions and share them with your teacher.
    1. Check the slides and write down the sequence of assembly code for **C=A+B**
+      Assembly code
+      •.DATA    
+      •A   dw100
+      •B   dw150
+      •C   dw?
+      •MOV    AX,  A
+      •ADD     AX, B
+      •MOV    C, AX
    2. Assume two threads running concurrently. Thread 1 is executing **X=A+B** and thread 2 is executing **Y=C+D**. 
       1. Write down three **possible** interleavings (assembly instructions). 
+      •.DATA    
+      •A   dw100
+      •C   dw10
+      •B   dw150
+      •D   dw15
+      •X   dw?
+      •Y   dw?
+      •MOV    AX,  A
+      •ADD     AX, B
+      •MOV    X, AX
+      •MOV    AX,  C
+      •ADD     AX, D
+      •MOV    Y, AX
+
+      •.DATA    
+      •A   dw100
+      •B   dw150
+      •X   dw?
+      •C   dw10
+      •D   dw15
+      •Y   dw?
+      •MOV    AX,  A
+      •ADD     AX, B
+      •MOV    X, AX
+      •MOV    AX,  C
+      •ADD     AX, D
+      •MOV    Y, AX
       2. Write down three **impossible** interleavings.
 2. [~ 30 min] **Threads**: A simple example about threads: creating, starting and joining threads.
    
